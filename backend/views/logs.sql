@@ -1,0 +1,2 @@
+-- die ansicht logs geht auf die tabelle logbuch!
+-- ZUTUN

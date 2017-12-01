@@ -1,5 +1,5 @@
 create table logs (
-  logs_id       number(10)    not null,
+  logs_id       number(15)    not null,
   erstellt_am   timestamp(6)  not null,
   erstellt_von  varchar2(32)  not null,
   geaendert_am  timestamp(6)  not null,
@@ -7,13 +7,13 @@ create table logs (
   version       number(10)    not null,
   zeitstempel   timestamp(6)  not null,
   stufe         varchar2(5)   not null,
-  modul         varchar2(61)  not null,
+  modul         varchar2(256)  not null,
   zeile         number(6)     not null,
-  meldung       varchar2(255) not null
+  meldung       varchar2(512) not null
 )
 /
 
-comment on table logs is 'Tabelle Logsaetze zum Festhalten der Log-Meldungen.'
+comment on table logs is 'Tabelle logsaetze zum Festhalten der Log-Meldungen.'
 /
 comment on column logs.logs_id is 'Primärschlüssel.'
 /

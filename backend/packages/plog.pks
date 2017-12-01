@@ -1,14 +1,17 @@
 create or replace package plog
 is
 
-procedure fatal (pi_meldung varchar2);
+  /* 
+      Hinweis: plog ist nur eine fassade, daher werden hier keine abhängigkeiten zum datenmodel hergestellt.
+      z.B. meldung in logbuch.meldung%type darf nicht gemacht werden. varchar2 ist abstrakter!
+  */
 
-procedure error (pi_meldung varchar2);
-
-procedure warn (pi_meldung varchar2);
-
-procedure info (pi_meldung varchar2);
-
-procedure debug (pi_meldung varchar2);
+  procedure error (meldung in varchar2);
+  
+  procedure warn (meldung in varchar2);
+  
+  procedure info (meldung in varchar2);
+  
+  procedure debug (meldung in varchar2);
 
 end plog;
